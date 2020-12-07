@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from 'reactstrap';
 import axios from "axios";
 
-import { coordinates } from './patch/country_coordinates'
+import { coordinates } from './patch/country_coordinates';
 import Legend from "./components/Legend";
 import Map from "./components/Map";
 
 import "./App.css";
+import "./Button.js";
+import ButtonLinks from "./Button.js";
 
 const initialState = {
   colors: [
@@ -86,23 +89,36 @@ class App extends Component {
     const { colors, countries_data, data_loaded, fields, query } = this.state;
 
     return data_loaded ? (
-      <div className="root">
-        <Legend
-          colors={colors}
-          fields={fields}
-          query={query}
-          handleSelectLegend={this.handleSetQuery}
-        />
+      <>
+        <Container>
+          <Row>
+            <Col xs="8" className="root">
+              <Legend
+                colors={colors}
+                fields={fields}
+                query={query}
+                handleSelectLegend={this.handleSetQuery}
+              />
 
-        <Map
-          colors={colors}
-          data={countries_data}
-          fields={fields}
-          query={query}
-        />
+              <Map
+                colors={colors}
+                data={countries_data}
+                fields={fields}
+                query={query}
+              />
 
-        <div className="footer">Data source: About-Corona.Net</div>
-      </div>
+              <div className="footer">Data source: About-Corona.Net</div>
+            </Col>
+
+            <Col xs="4">
+              <Row>
+                <ButtonLinks/>
+              </Row>
+            </Col>
+
+          </Row>
+        </Container>
+      </>
     ) : null;
   }
 }
