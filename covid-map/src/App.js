@@ -9,6 +9,7 @@ import Map from "./components/Map";
 import "./App.css";
 import "./Button.js";
 import ButtonLinks from "./Button.js";
+import timelineFeed from "./TwitterFeed";
 
 const initialState = {
   colors: [
@@ -90,37 +91,35 @@ class App extends Component {
 
     return data_loaded ? (
       <>
-        <div>
-          <div className="column left">
-          <div className="root">
-            <Legend
-              colors={colors}
-              fields={fields}
-              query={query}
-              handleSelectLegend={this.handleSetQuery}
-            />
+        <div className="column">
+          <div className="left">
+            <div className="root">
+              <Legend
+                colors={colors}
+                fields={fields}
+                query={query}
+                handleSelectLegend={this.handleSetQuery}
+              />
 
-            <Map
-              colors={colors}
-              data={countries_data}
-              fields={fields}
-              query={query}
-            />
+              <Map
+                colors={colors}
+                data={countries_data}
+                fields={fields}
+                query={query}
+              />
 
-            <div className="footer">Data source: About-Corona.Net</div>
+              <div className="footer">Data source: About-Corona.Net</div>
+            </div>
           </div>
-          </div>
 
-          <div className="column right">
+          <div className="right">
             <div className="btnSection">
               <ButtonLinks/>
             </div>
+            <div className="TwitSection">
+              <timelineFeed/>
+            </div>
           </div>
-          {/* <Col xs="4">
-            <Row>
-              <ButtonLinks/>
-            </Row>
-          </Col> */}
 
         </div>
       </>

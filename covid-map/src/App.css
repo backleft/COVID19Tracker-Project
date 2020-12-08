@@ -121,18 +121,27 @@
 }
 
 .column {
-    padding: 10px;
+    background-color: black;
 }
 
 .left {
+    float: left;
     width: 75%;
 }
 
 .right {
+    float: left;
+    display: flex;
+    justify-content: center;
     width: 25%;
+    background-color: rgb(134, 134, 134);
 }
 
 .btnSection {
-    position: fixed;
+    background-color: grey;
+    position: absolute;
+    display: flex;
+    justify-content: center;
     top: 0;
+
 }

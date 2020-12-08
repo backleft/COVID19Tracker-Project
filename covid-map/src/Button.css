@@ -1,5 +1,39 @@
-.btnSize {
-    height: 100px;    
-    margin-right: 5px;
-    width: 120px;
+.btnGrid {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.govBtn {
+    background-color: orange;
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.cdcBtn {
+    background-color: rgb(99, 99, 241);
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.whoBtn {
+    background-color: rgb(105, 188, 202);
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.testBtn {
+    background-color: greenyellow;
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    margin: 5px;
 }
