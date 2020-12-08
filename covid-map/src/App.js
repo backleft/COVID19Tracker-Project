@@ -90,34 +90,39 @@ class App extends Component {
 
     return data_loaded ? (
       <>
-        <Container>
-          <Row>
-            <Col xs="8" className="root">
-              <Legend
-                colors={colors}
-                fields={fields}
-                query={query}
-                handleSelectLegend={this.handleSetQuery}
-              />
+        <div>
+          <div className="column left">
+          <div className="root">
+            <Legend
+              colors={colors}
+              fields={fields}
+              query={query}
+              handleSelectLegend={this.handleSetQuery}
+            />
 
-              <Map
-                colors={colors}
-                data={countries_data}
-                fields={fields}
-                query={query}
-              />
+            <Map
+              colors={colors}
+              data={countries_data}
+              fields={fields}
+              query={query}
+            />
 
-              <div className="footer">Data source: About-Corona.Net</div>
-            </Col>
+            <div className="footer">Data source: About-Corona.Net</div>
+          </div>
+          </div>
 
-            <Col xs="4">
-              <Row>
-                <ButtonLinks/>
-              </Row>
-            </Col>
+          <div className="column right">
+            <div className="btnSection">
+              <ButtonLinks/>
+            </div>
+          </div>
+          {/* <Col xs="4">
+            <Row>
+              <ButtonLinks/>
+            </Row>
+          </Col> */}
 
-          </Row>
-        </Container>
+        </div>
       </>
     ) : null;
   }

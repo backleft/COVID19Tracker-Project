@@ -119,3 +119,20 @@
     position: absolute;
     z-index: 1;
 }
+
+.column {
+    padding: 10px;
+}
+
+.left {
+    width: 75%;
+}
+
+.right {
+    width: 25%;
+}
+
+.btnSection {
+    position: fixed;
+    top: 0;
+}
