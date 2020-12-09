@@ -1,34 +1,34 @@
-import { TwitterTimelineEmbed} from 'react-twitter-embed';
-import React from "react";
+import React, { useEffect } from "react";
 
-import './TwitterFeed.css';
+const TwitterContainer = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    document.getElementsByClassName("twitter-embed")[0].appendChild(script);
+  }, []);
 
-const timelineFeed = () => {
-    return (
-        <section className="twitterContainer">
-            <div className="twitter-embed">
-                <TwitterTimelineEmbed
-                sourceType="profile"
-                screenName="WHO"
-                userId={14499829}
-                options={{
-                    tweetLimit: "2",
-                    width: "100%",
-                    height: "100%"
-                }}
-                theme="dark"
-                noHeader="true"
-                noFooter="true"
-                noBorders="true"
-                />
-            </div>
-        </section>
-        // <TwitterTimelineEmbed 
-        // sourceType="profile"
-        // userId={14499829}
-        // options={{height: 400}}
-        // theme="dark"
-        // />
-    );
-}
-export default timelineFeed;
+  return (
+    <section className="twitterContainer">
+      <div className="twitter-embed">
+      <a class="twitter-timeline" 
+      data-lang="en" 
+      data-width="200"
+      data-height="300" 
+      data-theme="dark" 
+      href="https://twitter.com/CDCgov">
+        Tweets by CDCgov
+      </a> 
+      <a class="twitter-timeline"
+      data-lang="en" 
+      data-width="200"
+      data-height="300" 
+      data-theme="dark"
+      href="https://twitter.com/CAPublicHealth?ref_src=twsrc%5Etfw">
+         Tweets by CAPublicHealth
+      </a> 
+      </div>
+    </section>
+  );
+};
+
+export default TwitterContainer
