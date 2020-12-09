@@ -9,7 +9,7 @@ import Map from "./components/Map";
 import "./App.css";
 import "./Button.js";
 import ButtonLinks from "./Button.js";
-import timelineFeed from "./TwitterFeed";
+import TwitterContainer from "./TwitterFeed";
 
 const initialState = {
   colors: [
@@ -117,7 +117,7 @@ class App extends Component {
               <ButtonLinks/>
             </div>
             <div className="TwitSection">
-              <timelineFeed/>
+              <TwitterContainer/>
             </div>
           </div>
 
