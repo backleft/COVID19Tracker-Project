@@ -1,0 +1,6 @@
+.twitterContainer {
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
