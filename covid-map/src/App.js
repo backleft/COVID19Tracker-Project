@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from 'reactstrap';
 import axios from "axios";
 
 import { coordinates } from './patch/country_coordinates';
 import Legend from "./components/Legend";
 import Map from "./components/Map";
+
+import {Charts, CountryPicker} from './Component';
+import {fetchData} from './API';
 
 import "./App.css";
 import "./Button.js";
@@ -23,10 +25,23 @@ const initialState = {
   query: "confirmed",
 };
 class App extends Component {
-  state = initialState;
+  mapState = initialState;
 
-  componentDidMount() {
+  state = {       
+    data: {},
+    country: '',
+  }
+
+  async componentDidMount() {
     this.fetchCountryData();
+    const data = await fetchData();
+    //console.log(fetchedData);
+    this.setState({data});
+  }
+
+  handleCountryChange = async (country) => {        
+    const data = await fetchData(country);
+    this.setState({data: data, country: country});
   }
 
   fetchCountryData = async () => {
@@ -87,8 +102,8 @@ class App extends Component {
   };
 
   render() {
-    const { colors, countries_data, data_loaded, fields, query } = this.state;
-
+    const { colors, countries_data, data_loaded, fields, query } = this.mapState;
+    const {data, country } = this.state;
     return data_loaded ? (
       <>
         <div className="column">
@@ -113,12 +128,27 @@ class App extends Component {
           </div>
 
           <div className="right">
+
             <div className="btnSection">
               <ButtonLinks/>
             </div>
+
             <div className="TwitSection">
               <TwitterContainer/>
             </div>
+
+            <div className="GraphSection">
+            
+              <div className="CountrySection">
+                <CountryPicker handleCountryChange={this.handleCountryChange}/>
+              </div>
+              
+              <div className="ChartSection">
+                <Charts data={data} country={country}/>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
