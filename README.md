@@ -2,7 +2,7 @@
 __TeamNightOwls__
 
 Steven Salvador: stevensalvador@csu.fullerton.edu
-Micheal(Chi)Lam: ?
+Micheal(Chi)Lam: micheallam@csu.fullerton.edu
 
 
 __Coming soon__
