@@ -7,6 +7,7 @@
 }
 
 .govBtn {
+    text-decoration: none;
     background-color: orange;
     height: 60px;
     width: 60px;
@@ -15,6 +16,7 @@
 }
 
 .cdcBtn {
+    text-decoration: none;
     background-color: rgb(99, 99, 241);
     height: 60px;
     width: 60px;
@@ -23,6 +25,7 @@
 }
 
 .whoBtn {
+    text-decoration: none;
     background-color: rgb(105, 188, 202);
     height: 60px;
     width: 60px;
@@ -31,6 +34,7 @@
 }
 
 .testBtn {
+    text-decoration: none;
     background-color: greenyellow;
     height: 60px;
     width: 60px;

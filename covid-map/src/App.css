@@ -121,36 +121,40 @@
 }
 
 .column {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 .left {
     float: left;
-    width: 75%;
+    width: 73.5%;
+    background-color: rgb(0, 0, 0);
 }
 
 .right {
     float: left;
     display: flex;
     justify-content: center;
-    width: 25%;
-    background-color: rgb(134, 134, 134);
+    width: 26.5%;
+    background-color: rgb(0, 0, 0);
 }
 
 .btnSection {
-    background-color: grey;
+    background-color: rgb(58, 58, 58);
     position: absolute;
-    display: flex;
+    display: inline-block;
     justify-content: center;
-    top: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 
 }
 .TwitSection {
-    background-color: grey;
+    background-color: rgb(0, 0, 0);
     position: absolute;
     display: flex;
     justify-content: center;
     border: 3px solid black;
     text-align: center;
-    bottom: 0;
+    top: 40px;
 }
