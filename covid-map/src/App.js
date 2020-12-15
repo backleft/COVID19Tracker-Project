@@ -25,9 +25,9 @@ const initialState = {
   query: "confirmed",
 };
 class App extends Component {
-  mapState = initialState;
+  state = initialState;
 
-  state = {       
+  mapState = {       
     data: {},
     country: '',
   }
@@ -102,8 +102,8 @@ class App extends Component {
   };
 
   render() {
-    const { colors, countries_data, data_loaded, fields, query } = this.mapState;
-    const {data, country } = this.state;
+    const { colors, countries_data, data_loaded, fields, query } = this.state;
+    const {data, country } = this.mapState;
     return data_loaded ? (
       <>
         <div className="column">
